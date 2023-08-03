@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/node": "^20.4.6",
+    "@vultr/vultr-node": "^2.6.0",
+    "dotenv": "^16.3.1"
+  }
+}
