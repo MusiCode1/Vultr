@@ -13,6 +13,10 @@ export async function start_server() {
 
     const list_snapshots = await util.get_list_snapshots();
 
+    if (list_snapshots instanceof Error) {
+        throw list_snapshots;
+    }
+
     const snapshot_id = list_snapshots.snapshots[0].id;
 
     const crt_ins: create_instance = await vultr.instances.createInstance({

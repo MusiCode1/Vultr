@@ -9,6 +9,10 @@ export async function delete_server() {
     const list_instances = await util.get_list_instances();
     const list_snapshots = await util.get_list_snapshots();
 
+    if (list_instances instanceof Error) {
+        throw list_instances;
+    }
+
     const instance = list_instances.instances[0];
 
     // Create snapshot from current instanse
